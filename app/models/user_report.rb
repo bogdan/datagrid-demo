@@ -1,6 +1,5 @@
 class UserReport
   include Datagrid
-  include ActiveModel::Naming
 
   scope do
     User
