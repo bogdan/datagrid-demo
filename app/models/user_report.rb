@@ -6,7 +6,7 @@ class UserReport
   end
   filter(:email, :string)
   filter(:disabled, :eboolean)
-  filter(:registration_type, :enum, :select => User::REGISTRATION_TYPES)
+  filter(:registration_type, :enum, :select => User::REGISTRATION_TYPES.map {|r| [r.humanize, r]})
   integer_range_filters(:logins_count)
   date_range_filters(:registered_at)
 
@@ -18,5 +18,8 @@ class UserReport
   end
   column(:logins_count)
   column(:registered_at)
+  column(:disabled) do
+    self.disabled? ? "Yes" : "No"
+  end
 
 end
