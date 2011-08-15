@@ -1,7 +1,17 @@
 
 Project.transaction do
+  ["Google", "Apple", "Microsoft"].each do |name|
+    Account.create!(:name => name)
+  end
+end
+
+accounts = Account.all
+Project.transaction do
   10.times do
-    Project.create!(:name => Faker::Lorem.words(3).join(" "))
+    Project.create!({
+      :account => accounts.sample,
+      :name => Faker::Lorem.words(3).join(" ")
+    })
   end
 end
 
