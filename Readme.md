@@ -6,6 +6,7 @@ Application that shows [Datagrid](https://github.com/bogdan/datagrid) in action
 ### Install
 
 ```
+git clone git://github.com/bogdan/datagrid-demo.git
 cd datagrid-demo
 bundle
 rake db:create db:migrate db:seed
