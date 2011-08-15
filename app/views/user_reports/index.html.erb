@@ -11,12 +11,14 @@
     <div class="clear"></div>
   <% end -%>
 
-  <%= f.submit %>
+  <div class="filter">
+    <%= f.submit %>
+  </div>
 <% end -%>
 
 
 <% assets = @user_report.assets.paginate(:page => params[:page]) -%>
 
-<div>Total: <%= assets.total_entries %></div>
+<div class='total'>Total: <%= assets.total_entries %></div>
 <%= datagrid_table(@user_report, assets) %>
 <%= will_paginate assets %>

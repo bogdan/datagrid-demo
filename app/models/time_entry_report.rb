@@ -19,19 +19,23 @@ class TimeEntryReport
   # Filters
   #
   
-  filter :project_id, :enum, :select => lambda {Project.all.map {|p| [p.name, p.id]}} do |value|
-    self.where(["time_entries.project_id = ?", value])
+  filter(:project_id, :enum, 
+    :select => lambda {Project.all.map {|p| [p.name, p.id]}},
+    :multiple => true,
+    :include_blank => false
+  ) do |value|
+    self.where(:time_entries => {:project_id => value})
   end
 
 
   filter :year, :enum, :select => lambda { (2010..Date.today.year)}, :include_blank => false, :default => Date.today.year do |value|
-    self.where(["strftime('%Y', time_entries.date) = ?", value])
+    self.where(["cast(strftime('%Y', time_entries.date) as integer) = ?", value.to_i])
   end
 
   filter(:month, :enum, 
-         :select => Date::MONTHNAMES[1..12].enum_for(:each_with_index).collect {|name, index| [name, index]},
+         :select => Date::MONTHNAMES[1..12].enum_for(:each_with_index).collect {|name, index| [name, index + 1]},
          :include_blank => false,
-         :default => proc { Date.today.month}
+         :default => proc { Date.today.month }
         ) do |value|
     self.where(["cast(strftime('%m', time_entries.date) as integer) = ?", value.to_i])
   end
