@@ -9,7 +9,7 @@ Application that shows [Datagrid](https://github.com/bogdan/datagrid) in action
 git clone git://github.com/bogdan/datagrid-demo.git
 cd datagrid-demo
 bundle
-rake db:create db:migrate db:seed
+bundle exec rake db:create db:migrate db:seed
 bundle exec rails server
 ```
 
