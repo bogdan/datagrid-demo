@@ -1,0 +1,17 @@
+<% report ||= source -%>
+
+<% 
+    def source(path, type = "ruby")
+      content_tag(:pre, content_tag(:code, File.read("#{Rails.root}/app/#{path}")), :class => "sh_#{type}")
+    end
+
+
+-%>
+<h3>Grid:</h3>
+<%= source("models/#{report.class.to_s.underscore}.rb") %>
+
+<h3>Controller:</h3>
+<%= source("controllers/#{controller.class.to_s.underscore}.rb") %>
+
+<h3>View:</h3>
+<%= source("views/#{report.class.to_s.underscore.pluralize}/index.html.erb", "html") %>
