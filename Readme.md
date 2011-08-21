@@ -2,8 +2,12 @@
 
 Application that shows [Datagrid](https://github.com/bogdan/datagrid) in action
 
+Running application available on heroku [http://datagrid.heroku.com](http://datagrid.heroku.com)
+
 
 ### Install
+
+Database: **postresql** (because heroku likes it)
 
 ```
 git clone git://github.com/bogdan/datagrid-demo.git
