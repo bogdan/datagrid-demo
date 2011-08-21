@@ -2,7 +2,6 @@ class TimeEntryReport
 
   include Datagrid
 
-
   #
   # Scope
   #
