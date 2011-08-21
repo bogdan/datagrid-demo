@@ -8,8 +8,8 @@ class TimeEntryReport
   
   scope do
     User.select(
-      "users.*, projects.name project_name, accounts.name account_name, sum(time_entries.hours) report_hours"
-    ).joins(:time_entries => {:project => :account}).group("projects.id", "users.id")
+      "users.name, projects.name project_name, accounts.name account_name, sum(time_entries.hours) report_hours"
+    ).joins(:time_entries => {:project => :account}).group("projects.name", "users.name", "accounts.name")
 
   end
 
@@ -27,8 +27,12 @@ class TimeEntryReport
   end
 
 
-  filter :year, :enum, :select => lambda { (2010..Date.today.year)}, :include_blank => false, :default => Date.today.year do |value|
-    self.where(["cast(strftime('%Y', time_entries.date) as integer) = ?", value.to_i])
+  filter(:year, :enum, 
+    :select => lambda { (2010..Date.today.year)}, 
+    :include_blank => false, 
+    :default => Date.today.year
+  ) do |value|
+    self.where(["extract(year from time_entries.date) = ?", value.to_i])
   end
 
   filter(:month, :enum, 
@@ -36,7 +40,8 @@ class TimeEntryReport
          :include_blank => false,
          :default => proc { Date.today.month }
         ) do |value|
-    self.where(["cast(strftime('%m', time_entries.date) as integer) = ?", value.to_i])
+
+    self.where(["extract(month from time_entries.date) = ?", value.to_i])
   end
 
 
@@ -50,4 +55,8 @@ class TimeEntryReport
   column(:project_name, :header => "Project", :order => "projects.name")
   column(:account_name, :header => "Company", :order => "accounts.name")
   column(:report_hours)
+
+  def self.pg?
+    ActiveRecord::Base.connection_config[:adapter] == "pg"
+  end
 end
