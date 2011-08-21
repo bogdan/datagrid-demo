@@ -13,6 +13,7 @@ gem "ffaker"
 gem "hirb"
 gem "datagrid", :git => "git://github.com/bogdan/datagrid.git"
 gem "will_paginate"
+gem "therubyracer"
 
 # Gems used only for assets and not required
 # in production environments by default.
