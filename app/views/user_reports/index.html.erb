@@ -1,6 +1,5 @@
 <h3>Users Report</h3>
 
-
 <div class="left">
   <%= form_for @user_report, :html => {:method => :get} do |f| -%>
     <% @user_report.filters.each do |filter| -%>
@@ -17,11 +16,10 @@
   <% end -%>
 
 
-  <% assets = @user_report.assets.paginate(:page => params[:page]) -%>
 
-  <div class='total'>Total: <%= assets.total_entries %></div>
-  <%= datagrid_table(@user_report, assets) %>
-  <%= will_paginate assets %>
+  <div class='total'>Total: <%= @assets.total_entries %></div>
+  <%= datagrid_table(@user_report, @assets) %>
+  <%= will_paginate @assets %>
 </div>
 
 <div class="right">
