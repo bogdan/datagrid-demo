@@ -15,6 +15,7 @@ Project.transaction do
   end
 end
 
+date_range = (1.year.ago.to_date..Date.today).to_a
 projects = Project.all
 10.times do
   User.transaction do
@@ -26,12 +27,12 @@ projects = Project.all
     u.logins_count = rand(10)
     u.registered_at = rand(100).hours.ago
     u.save!
-    100.times do
+    1000.times do
       t = TimeEntry.new
       t.user = u
       t.project = projects.sample
       t.hours = rand(8) + 1
-      t.date = rand(70).days.ago
+      t.date = date_range.sample
       t.save!
     end
   end

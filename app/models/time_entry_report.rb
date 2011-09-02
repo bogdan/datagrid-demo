@@ -28,9 +28,9 @@ class TimeEntryReport
 
 
   filter(:year, :enum, 
-    :select => lambda { (2010..Date.today.year)}, 
+    :select => lambda { (TimeEntry.minimum(:date).year..TimeEntry.maximum(:date).year)}, 
     :include_blank => false, 
-    :default => Date.today.year
+    :default => lambda {TimeEntry.maximum(:date).year}
   ) do |value|
     self.where(["extract(year from time_entries.date) = ?", value.to_i])
   end
@@ -38,7 +38,7 @@ class TimeEntryReport
   filter(:month, :enum, 
          :select => Date::MONTHNAMES[1..12].enum_for(:each_with_index).collect {|name, index| [name, index + 1]},
          :include_blank => false,
-         :default => proc { Date.today.month }
+         :default => lambda {TimeEntry.maximum(:date).month}
         ) do |value|
 
     self.where(["extract(month from time_entries.date) = ?", value.to_i])
@@ -56,7 +56,4 @@ class TimeEntryReport
   column(:account_name, :header => "Company", :order => "accounts.name")
   column(:report_hours)
 
-  def self.pg?
-    ActiveRecord::Base.connection_config[:adapter] == "pg"
-  end
 end
