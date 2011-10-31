@@ -1,17 +1,20 @@
 development:
   adapter: postgresql
   database: datagrid_development
+  username: postgres
   pool: 5
   timeout: 5000
 
 test:
   adapter: postgresql
   database: datagrid_test
+  username: postgres
   pool: 5
   timeout: 5000
 
 production:
   adapter: postgresql
   database: datagrid_production
+  username: postgres
   pool: 5
   timeout: 5000
