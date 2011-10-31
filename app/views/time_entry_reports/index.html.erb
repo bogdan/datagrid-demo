@@ -16,10 +16,10 @@
     </div>
     <div class="clear"></div>
   <% end -%>
+  <br/>
 
-  <div class="total">Total: <%= @assets.total_entries %></div>
   <%= datagrid_table(@time_entry_report, @assets) %>
-  <%= will_paginate @assets %>
+  <%= paginate @assets %>
 
 </div>
 

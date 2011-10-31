@@ -37,3 +37,15 @@ projects = Project.all
     end
   end
 end
+
+
+50.times do
+  d = Document.new
+  d.title = Faker::Lorem.sentence
+  d.author = Faker::Internet.email
+  d.body = Faker::Lorem.sentences(5).join(" ")
+  d.rating = (0..10).to_a.sample
+
+  d.save!
+
+end

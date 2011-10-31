@@ -17,9 +17,9 @@
 
 
 
-  <div class='total'>Total: <%= @assets.total_entries %></div>
+  <div class='total'>Total: <%= @user_report.assets.count %></div>
   <%= datagrid_table(@user_report, @assets) %>
-  <%= will_paginate @assets %>
+  <%= paginate @assets %>
 </div>
 
 <div class="right">

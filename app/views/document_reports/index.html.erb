@@ -1,0 +1,28 @@
+
+<h3>Documents Report</h3>
+
+<div class="left">
+  <%= form_for @document_report, :html => {:method => :get} do |f| -%>
+    <% @document_report.filters.each do |filter| -%>
+      <div class="filter">
+        <%= f.datagrid_label filter %>
+        <%= f.datagrid_filter filter %>
+      </div>
+      <div class="clear"></div>
+    <% end -%>
+
+    <div class="filter">
+      <%= f.submit %>
+    </div>
+  <% end -%>
+
+
+
+  <div class='total'>Total: <%= @document_report.assets.count %></div>
+  <%= datagrid_table(@document_report, @assets) %>
+  <%= paginate @assets %>
+</div>
+
+<div class="right">
+  <%= render :partial => "shared/source", :object => @document_report %>
+</div>

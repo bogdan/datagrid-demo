@@ -3,5 +3,6 @@ DatagridDemo::Application.routes.draw do
 
   resources :user_reports, :only => [:index]
   resources :time_entry_reports, :only => [:index]
+  resources :document_reports, :only => [:index]
 
 end

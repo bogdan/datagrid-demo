@@ -5,13 +5,17 @@ gem 'rails', '3.1.1'
 
 gem 'sqlite3'
 gem 'pg'
+gem "mongoid", "2.2.3"
+gem "bson_ext"
+
 
 gem 'json'
 gem "annotate"
 gem "ffaker"
 gem "hirb"
-gem "datagrid", :git => "git://github.com/bogdan/datagrid.git"
-gem "will_paginate"
+gem "datagrid", :path => "/home/bogdan/makabu/my/datagrid"
+#gem "datagrid", :git => "git://github.com/bogdan/datagrid.git"
+gem "kaminari"
 gem "therubyracer"
 
 group :assets do
