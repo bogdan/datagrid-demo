@@ -13,8 +13,8 @@ gem 'json'
 gem "annotate"
 gem "ffaker"
 gem "hirb"
-gem "datagrid", :path => "/home/bogdan/makabu/my/datagrid"
-#gem "datagrid", :git => "git://github.com/bogdan/datagrid.git"
+#gem "datagrid", :path => "/home/bogdan/makabu/my/datagrid"
+gem "datagrid", :git => "git://github.com/bogdan/datagrid.git"
 gem "kaminari"
 gem "therubyracer"
 
