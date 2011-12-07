@@ -24,7 +24,7 @@ class UserReport
   #
 
   column(:id)
-  column(:email)
+  column(:email, :url => proc {|user| "mailto:#{user.email}"})
   column(:registration_type) do |record|
     record.registration_type.humanize
   end
