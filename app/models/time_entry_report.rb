@@ -53,7 +53,10 @@ class TimeEntryReport
     self.name
   end
   column(:project_name, :header => "Project", :order => "projects.name")
-  column(:account_name, :header => "Company", :order => "accounts.name")
+  column(:account_name, 
+         :header => "Company",
+         :order => "accounts.name",
+         :partial => "time_entry_reports/company")
   column(:report_hours)
 
 end
