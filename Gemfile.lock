@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/bogdan/datagrid.git
-  revision: 5ecbf9724d16b385a852dc05feaef73bb71b5b65
+  revision: f64f3c35636810bc940b12de4d0c83f99f036ba3
   specs:
     datagrid (0.4.1)
       rails (>= 3.0)
