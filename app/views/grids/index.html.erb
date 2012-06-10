@@ -1,0 +1,30 @@
+<%= form_for @grid, :html => {:enctype => "multipart/form-data"} do |f| %>
+  <% if @grid.errors.any? -%>
+    <div class="red">
+      Name or Source file not given
+    </div>
+  <% end -%>
+  <div class="filter">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+      <div class="clear"></div>
+  </div>
+  <div class="filter">
+    <%= f.label :file, "Source code" %>
+    <%= f.file_field :file %>
+  <div class="clear"></div>
+  </div>
+  <%= f.submit "Submit" %>
+<% end -%>
+
+
+<h3>Uploaded grids:</h3>
+<ul>
+  <% @grids.each do |grid| -%>
+  
+      <li>
+        <%= link_to grid, grid %>
+      </li>
+    
+  <% end -%>
+</ul>

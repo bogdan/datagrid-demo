@@ -3,11 +3,11 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.1'
 
 
-gem 'sqlite3'
 gem 'pg'
 gem "mongoid", "2.2.2"
 gem "bson", "1.4.0"
 gem "bson_ext", "1.4.0"
+gem "carrierwave"
 
 
 gem 'json'
