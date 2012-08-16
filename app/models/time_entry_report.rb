@@ -30,7 +30,7 @@ class TimeEntryReport
   filter(:year, :enum, 
     :select => lambda { (TimeEntry.minimum(:date).year..TimeEntry.maximum(:date).year)}, 
     :include_blank => false, 
-    :default => lambda {TimeEntry.maximum(:date).year}
+    :default => lambda {Date.today.year}
   ) do |value|
     self.where(["extract(year from time_entries.date) = ?", value.to_i])
   end
@@ -38,7 +38,7 @@ class TimeEntryReport
   filter(:month, :enum, 
          :select => Date::MONTHNAMES[1..12].enum_for(:each_with_index).collect {|name, index| [name, index + 1]},
          :include_blank => false,
-         :default => lambda {TimeEntry.maximum(:date).month}
+         :default => lambda {Date.today.month}
         ) do |value|
 
     self.where(["extract(month from time_entries.date) = ?", value.to_i])

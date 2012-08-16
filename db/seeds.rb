@@ -1,3 +1,4 @@
+DatabaseCleaner.clean_with(:truncation)
 
 Project.transaction do
   ["Google", "Apple", "Microsoft"].each do |name|
@@ -15,7 +16,7 @@ Project.transaction do
   end
 end
 
-date_range = (1.year.ago.to_date..Date.today).to_a
+date_range = (Date.today.beginning_of_year.to_date..5.years.from_now.end_of_year.to_date).to_a
 projects = Project.all
 10.times do
   User.transaction do
@@ -27,13 +28,11 @@ projects = Project.all
     u.logins_count = rand(10)
     u.registered_at = rand(100).hours.ago
     u.save!
-    1000.times do
-      t = TimeEntry.new
-      t.user = u
-      t.project = projects.sample
-      t.hours = rand(8) + 1
-      t.date = date_range.sample
-      t.save!
+    10000.times do
+      TimeEntry.connection.execute <<-SQL
+      insert into time_entries (user_id, project_id, hours, date) values
+      (#{u.id}, #{projects.sample.id}, #{rand(8) + 1}, '#{date_range.sample}')
+SQL
     end
   end
 end

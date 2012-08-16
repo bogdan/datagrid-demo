@@ -50,6 +50,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.1.2)
+    database_cleaner (0.8.0)
     erubis (2.7.0)
     execjs (1.2.9)
       multi_json (~> 1.0)
@@ -137,6 +138,7 @@ DEPENDENCIES
   bson_ext (= 1.4.0)
   carrierwave
   coffee-rails (~> 3.1.0)
+  database_cleaner
   datagrid!
   ffaker
   hirb
