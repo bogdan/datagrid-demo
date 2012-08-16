@@ -18,7 +18,7 @@ end
 
 date_range = (Date.today.beginning_of_year.to_date..5.years.from_now.end_of_year.to_date).to_a
 projects = Project.all
-10.times do
+100.times do
   User.transaction do
     u = User.new
     u.email = Faker::Internet.email
@@ -28,10 +28,11 @@ projects = Project.all
     u.logins_count = rand(10)
     u.registered_at = rand(100).hours.ago
     u.save!
-    10000.times do
+    10.times do
+      insertion = 1000.times.map { "(#{u.id}, #{projects.sample.id}, #{rand(8) + 1}, '#{date_range.sample}') " }.join(", ")
       TimeEntry.connection.execute <<-SQL
       insert into time_entries (user_id, project_id, hours, date) values
-      (#{u.id}, #{projects.sample.id}, #{rand(8) + 1}, '#{date_range.sample}')
+      #{insertion}
 SQL
     end
   end
