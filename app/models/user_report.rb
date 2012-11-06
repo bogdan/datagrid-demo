@@ -17,7 +17,7 @@ class UserReport
   filter(:disabled, :eboolean)
   filter(:registration_type, :enum, :select => User::REGISTRATION_TYPES.map {|r| [r.humanize, r]})
   integer_range_filters(:logins_count, {:default => proc { User.minimum(:logins_count)}}, {:default => proc {User.maximum(:logins_count)}})
-  date_range_filters(:registered_at)
+  filter(:registered_at, :date, :range => true)
 
   #
   # Columns
@@ -29,7 +29,9 @@ class UserReport
     record.registration_type.humanize
   end
   column(:logins_count)
-  column(:registered_at)
+  column(:registered_at) do |record|
+    record.registered_at.to_date
+  end
   column(:disabled) do
     self.disabled? ? "Yes" : "No"
   end

@@ -8,7 +8,12 @@ table.datagrid
     &.created_at
       min-width: 74px
 
+  .order
+    text-decoration: none 
+
   td, th 
+    &.id
+      min-width: 20px
     border: 1px solid black
     padding: 5px
     &.ordered
@@ -16,19 +21,30 @@ table.datagrid
         background-color: #BFB
       &.desc
         background-color: #BBF
+    
 
 
 .filter
-  width: 300px
+
+  width: 360px
   margin: 10px
   label
+    width: 150px
+    float: left
+  a
     float: left
   input, select
-    float: right
+    float: left
+    &.date_filter
+      &.from, &.to
+        width: 68px
   input
-    width: 150px
+    width: 180px
   select
-    width: 155px
+    width: 185px
+  .separator
+    float: left
+    margin-right: 4px
 
 input[type=submit]
   width: 155px

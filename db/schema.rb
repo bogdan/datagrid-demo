@@ -42,9 +42,6 @@ ActiveRecord::Schema.define(:version => 20120816072854) do
     t.datetime "updated_at"
   end
 
-  add_index "time_entries", ["project_id"], :name => "project_id"
-  add_index "time_entries", ["user_id"], :name => "account_id"
-
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
