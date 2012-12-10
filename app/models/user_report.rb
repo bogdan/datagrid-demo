@@ -16,7 +16,7 @@ class UserReport
   filter(:email, :string)
   filter(:disabled, :eboolean)
   filter(:registration_type, :enum, :select => User::REGISTRATION_TYPES.map {|r| [r.humanize, r]})
-  integer_range_filters(:logins_count, {:default => proc { User.minimum(:logins_count)}}, {:default => proc {User.maximum(:logins_count)}})
+  filter(:logins_count, :integer, :range => true, :default => proc { [User.minimum(:logins_count), User.maximum(:logins_count)]})
   filter(:registered_at, :date, :range => true)
 
   #
