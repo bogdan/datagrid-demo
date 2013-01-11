@@ -9,7 +9,7 @@ class TimeEntryReport
   scope do
     User.select(
       "users.name, projects.name as project_name, accounts.name as account_name, sum(time_entries.hours) as report_hours"
-    ).joins(:time_entries => {:project => :account}).group("projects.name", "users.name", "accounts.name")
+    ).joins(:time_entries => {:project => :account}).group("projects.name", "users.name", "accounts.name").order("users.name")
 
   end
 
