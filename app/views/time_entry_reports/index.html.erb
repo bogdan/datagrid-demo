@@ -3,19 +3,7 @@
 
 
 <div class="left">
-  <%= form_for @time_entry_report, :html => {:method => :get} do |f| -%>
-    <% @time_entry_report.filters.each do |filter| -%>
-      <div class="filter">
-        <%= f.datagrid_label filter %>
-        <%= f.datagrid_filter filter %>
-      </div>
-      <div class="clear"></div>
-    <% end -%>
-    <div class="filter">
-      <%= f.submit %>
-    </div>
-    <div class="clear"></div>
-  <% end -%>
+  <%= datagrid_form_for @time_entry_report %>
   <br/>
 
   <%= datagrid_table(@time_entry_report, @assets) %>

@@ -1,0 +1,11 @@
+<%= form_for grid, options do |f| -%>
+  <% grid.filters.each do |filter| %>
+    <div class="filter">
+      <%= f.datagrid_label filter %>
+      <%= f.datagrid_filter filter %>
+      <div class="clear"></div>
+    </div>
+  <% end %>
+  <%= f.submit I18n.t("datgrid.form.submit", :default => "Search").html_safe %>
+      <div class="clear"></div>
+<% end -%>

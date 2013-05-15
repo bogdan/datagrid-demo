@@ -1,21 +1,7 @@
 <h3>Users Report</h3>
 
 <div class="left">
-  <%= form_for @user_report, :html => {:method => :get} do |f| -%>
-    <% @user_report.filters.each do |filter| -%>
-      <div class="filter">
-        <%= f.datagrid_label filter %>
-        <%= f.datagrid_filter filter %>
-      </div>
-      <div class="clear"></div>
-    <% end -%>
-
-    <div class="filter">
-      <%= f.submit %>
-    </div>
-    <div class="clear"></div>
-  <% end -%>
-
+  <%= datagrid_form_for @user_report %>
 
 
   <div class='total'>Total: <%= @user_report.assets.count %></div>
