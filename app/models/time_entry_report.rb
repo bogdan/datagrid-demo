@@ -57,9 +57,10 @@ class TimeEntryReport
     :account_name, 
     :header => "Company",
     :order => "accounts.name",
-    :html => true
   ) do |model|
-    render :partial => "time_entry_reports/company", :locals => {:model => model}
+    format(model.account_name) do
+      render :partial => "time_entry_reports/company", :locals => {:model => model}
+    end
   end
 
   column(:report_hours)

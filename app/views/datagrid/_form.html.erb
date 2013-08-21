@@ -3,9 +3,10 @@
     <div class="filter">
       <%= f.datagrid_label filter %>
       <%= f.datagrid_filter filter %>
-      <div class="clear"></div>
     </div>
   <% end %>
-  <%= f.submit I18n.t("datgrid.form.submit", :default => "Search").html_safe %>
-      <div class="clear"></div>
+  <div class="datagrid-actions">
+    <%= f.submit I18n.t("datgrid.form.submit", :default => "Search").html_safe %>
+    <a href="#" class="datagrid-reset">Reset</a>
+  </div>
 <% end -%>

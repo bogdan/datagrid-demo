@@ -25,23 +25,23 @@ class UserReport
   #
 
   column(:id)
-  column(:email, :html => true ) do |model|
-    link_to model.email, "mailto:#{model.email}"
+  column(:email) do |model|
+    format(model.email) do |value|
+      link_to value, "mailto:#{value}"
+    end
   end
+
   column(:registration_type) do |record|
     record.registration_type.humanize
   end
   column(:logins_count)
+  column(:disabled) do
+    disabled? ? "Yes" : "No"
+  end
   column(:registered_at) do |record|
     record.registered_at.to_date
   end
-  column(:disabled) do
-    self.disabled? ? "Yes" : "No"
-  end
 
-  column(:created_at) do
-    created_at.to_date
-  end
 
 
 end

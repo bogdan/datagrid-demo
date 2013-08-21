@@ -1,56 +1,137 @@
+$dg-form-label: 150px
+
+
+= clearfix
+  *zoom: 1
+
+  &:before,
+  &:after
+    display: table
+    content: ''
+
+  &:after
+    clear: both
+
+=inline-block
+  display: inline-block
+  zoom: 1
+  *display: inline
+
 body
-  font-family: Times new Roman
+  font-family: sans-serif
 
 table.datagrid
+  background-color: transparent
   border-collapse: collapse
+  max-width: 100%
+
   th
-    background-color: #EEE
-    &.created_at
-      min-width: 74px
+    background-color: #eee
+    text-align: left
 
-  .order
-    text-decoration: none 
+  td,
+  th 
+    border: 1px solid #d6d6d6
+    padding: 5px 10px
 
-  td, th 
-    &.id
-      min-width: 20px
-    border: 1px solid black
-    padding: 5px
+    .order
+      a.asc, a.desc
+        text-decoration: none
+        font-weight: normal
+
     &.ordered
+      background-color: #fff7d5
+
       &.asc
-        background-color: #BFB
+        a.asc
+          font-weight: bold
+          color: #d00
+
       &.desc
-        background-color: #BBF
+        a.desc
+          font-weight: bold
+          color: #d00
     
 
+table.datagrid
+  td, th 
+    &.id
+      min-width: 30px
+    &.created_at
+      min-width: 80px
+
+
+.datagrid-form
+  background-color: #f0f0f0
+  border-radius: 5px
+  padding: 20px
 
 .filter
-
-  width: 360px
   margin: 10px
+  +clearfix
+
   label
-    width: 150px
+    width: $dg-form-label
     float: left
   a
     float: left
-  input, select
+
+    &.dp-choose-date
+      margin-left: -22px
+      margin-top: 7px
+
+  input[class*='filter']
+    border: 2px solid #ccc
+    border-radius: 4px
     float: left
+    padding: 5px 12px
+    width: 207px
+
     &.from, &.to
-      width: 90px
-  input
-    width: 200px
+      width: 83px
+
   select
-    width: 205px
+    float: left
+    width: 235px
+
+    &[multiple]
+      border: 2px solid #ccc
+      border-radius: 5px
+      height: 100px
+
   .separator
     float: left
-    margin: 0 4px
-  .enum_filter.column_names
-    height: 100px
+    margin: 6px 4px 0
 
 
+.datagrid-actions
+  padding-left: $dg-form-label +10
 
-input[type=submit]
-  width: 155px
+  input[type='submit']
+    background-color: #555
+    border: none
+    border-radius: 5px
+    color: white
+    cursor: pointer
+    font-size: 14px
+    font-weight: bold
+    line-height: normal
+    padding: 7px 15px
+    vertical-align: middle
+    +inline-block
+
+    &:hover,
+    &:focus
+      background-color: #333
+
+    &:active
+      background-color: #000
+
+  > a
+    font-size: 14px
+    padding: 7px 15px
+    vertical-align: middle
+    +inline-block
 
 
 .clear
