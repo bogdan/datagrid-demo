@@ -9,7 +9,9 @@ gem "bson", "1.4.0"
 gem "bson_ext", "1.4.0"
 gem "carrierwave"
 gem "database_cleaner"
-gem "debugger"
+group :development do
+  gem "debugger"
+end
 
 
 
