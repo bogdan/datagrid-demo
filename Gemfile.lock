@@ -1,5 +1,6 @@
-PATH
-  remote: /Users/bogdan/makabu/my/datagrid
+GIT
+  remote: git://github.com/bogdan/datagrid.git
+  revision: e2b1ea1f19e7ab098aaeea73767024d3de2c9960
   specs:
     datagrid (1.0.0)
       rails (>= 3.0)
