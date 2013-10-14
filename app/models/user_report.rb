@@ -13,7 +13,8 @@ class UserReport
   # Filters
   #
   
-  filter(:email, :string, :multiple => true)
+  filter(:id, :string, :multiple => true)
+  filter(:email, :string)
   filter(:disabled, :eboolean)
   filter(:registration_type, :enum, :select => User::REGISTRATION_TYPES.map {|r| [r.humanize, r]})
   filter(:logins_count, :integer, :range => true, :default => proc { [User.minimum(:logins_count), User.maximum(:logins_count)]})
