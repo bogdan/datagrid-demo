@@ -1,21 +1,10 @@
-$dg-form-label: 150px
-
-
-= clearfix
-  *zoom: 1
-
-  &:before,
-  &:after
-    display: table
-    content: ''
-
-  &:after
-    clear: both
 
 =inline-block
   display: inline-block
   zoom: 1
   *display: inline
+
+
 
 body
   font-family: sans-serif
@@ -51,6 +40,8 @@ table.datagrid
         a.desc
           font-weight: bold
           color: #d00
+  .noresults
+    text-align: center
     
 
 table.datagrid
@@ -61,77 +52,6 @@ table.datagrid
       min-width: 80px
 
 
-.datagrid-form
-  background-color: #f0f0f0
-  border-radius: 5px
-  padding: 20px
-
-.filter
-  margin: 10px
-  +clearfix
-
-  label
-    width: $dg-form-label
-    float: left
-  a
-    float: left
-
-    &.dp-choose-date
-      margin-left: -22px
-      margin-top: 7px
-
-  input[class*='filter']
-    border: 2px solid #ccc
-    border-radius: 4px
-    float: left
-    padding: 5px 12px
-    width: 207px
-
-    &.from, &.to
-      width: 83px
-
-  select
-    float: left
-    width: 235px
-
-    &[multiple]
-      border: 2px solid #ccc
-      border-radius: 5px
-      height: 100px
-
-  .separator
-    float: left
-    margin: 6px 4px 0
-
-
-.datagrid-actions
-  padding-left: $dg-form-label +10
-
-  input[type='submit']
-    background-color: #555
-    border: none
-    border-radius: 5px
-    color: white
-    cursor: pointer
-    font-size: 14px
-    font-weight: bold
-    line-height: normal
-    padding: 7px 15px
-    vertical-align: middle
-    +inline-block
-
-    &:hover,
-    &:focus
-      background-color: #333
-
-    &:active
-      background-color: #000
-
-  > a
-    font-size: 14px
-    padding: 7px 15px
-    vertical-align: middle
-    +inline-block
 
 
 .clear

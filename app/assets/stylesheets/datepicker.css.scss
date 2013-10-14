@@ -2,12 +2,14 @@
  * instead of a text link for "Choose date"
  */
 a.dp-choose-date {
-	float: right;
+	/*float: right;*/
 	width: 16px;
 	height: 16px;
 	padding: 0;
-	margin: 4px -18px 0;
-	display: block;
+  margin-left: -22px;
+  margin-top: 7px;
+	/*margin: 4px -18px 0;*/
+	display: inline-block;
 	text-indent: -2000px;
 	overflow: hidden;
 	background: url(/assets/calendar.png) no-repeat; 
