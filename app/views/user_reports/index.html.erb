@@ -1,5 +1,8 @@
 <h3>Users Report</h3>
 
+<div class="right">
+  <%= render :partial => "shared/source", :object => @user_report %>
+</div>
 <div class="left">
   <%= datagrid_form_for @user_report %>
 
@@ -9,6 +12,3 @@
   <%= paginate @assets %>
 </div>
 
-<div class="right">
-  <%= render :partial => "shared/source", :object => @user_report %>
-</div>

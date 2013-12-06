@@ -20,7 +20,7 @@ class UserReport
   filter(:logins_count, :integer, :range => true, :default => proc { [User.minimum(:logins_count), User.maximum(:logins_count)]})
   filter(:registered_at, :date, :range => true)
   filter(:condition, :dynamic, :header => "Dynamic condition")
-  column_names_filter(:header => "Extra Columns")
+  column_names_filter(:header => "Extra Columns", checkboxes: true)
 
   #
   # Columns
@@ -44,7 +44,7 @@ class UserReport
   column(:registered_at) do |record|
     record.registered_at.to_date
   end
-  column(:age) do |record|
+  column(:age, :header => "Registration Age") do |record|
     age = (DateTime.now.in_time_zone - record.registered_at) / 1.day
     "#{age.to_i} days"
   end

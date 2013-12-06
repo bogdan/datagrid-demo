@@ -4,15 +4,26 @@
   zoom: 1
   *display: inline
 
+= clearfix
+  *zoom: 1
+
+  &:before,
+  &:after
+    display: table
+    content: ''
+
+  &:after
+    clear: both
 
 
 body
   font-family: sans-serif
 
 table.datagrid
-  background-color: transparent
+  //background-color: transparent
   border-collapse: collapse
   max-width: 100%
+  z-index: 10000
 
   th
     background-color: #eee
@@ -42,6 +53,8 @@ table.datagrid
           color: #d00
   .noresults
     text-align: center
+  tr
+    background-color: white
     
 
 table.datagrid
@@ -122,3 +135,6 @@ table.datagrid
   *:first-child+html &
     overflow: hidden
   
+
+
+
