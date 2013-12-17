@@ -13,7 +13,7 @@ class UserReport
   # Filters
   #
   
-  filter(:id, :string, :multiple => true)
+  filter(:id, :string, :multiple => ',')
   filter(:email, :string)
   filter(:disabled, :eboolean)
   filter(:registration_type, :enum, :select => User::REGISTRATION_TYPES.map {|r| [r.humanize, r]})
