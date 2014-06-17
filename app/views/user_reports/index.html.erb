@@ -8,7 +8,7 @@
 
 
   <div class='total'>Total: <%= @user_report.assets.count %></div>
-  <%= datagrid_table(@user_report, @assets) %>
-  <%= paginate @assets %>
+  <%= datagrid_table(@user_report) %>
+  <%= paginate @user_report.assets %>
 </div>
 

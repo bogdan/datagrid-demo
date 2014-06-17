@@ -5,8 +5,8 @@
   <%= datagrid_form_for @document_report %>
 
   <div class='total'>Total: <%= @document_report.assets.count %></div>
-  <%= datagrid_table(@document_report, @assets) %>
-  <%= paginate @assets %>
+  <%= datagrid_table(@document_report) %>
+  <%= paginate @document_report.assets %>
 </div>
 
 <div class="right">

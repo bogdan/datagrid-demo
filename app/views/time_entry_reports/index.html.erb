@@ -6,8 +6,8 @@
   <%= datagrid_form_for @time_entry_report %>
   <br/>
 
-  <%= datagrid_table(@time_entry_report, @assets) %>
-  <%= paginate @assets %>
+  <%= datagrid_table(@time_entry_report) %>
+  <%= paginate @time_entry_report.assets %>
 
 </div>
 
