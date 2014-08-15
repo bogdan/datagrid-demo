@@ -4,7 +4,6 @@ Application that shows [Datagrid](https://github.com/bogdan/datagrid) in action
 
 Running application available on heroku [http://datagrid.herokuapp.com](http://datagrid.herokuapp.com)
 
-
 ### Install
 
 Database: **postresql** (because heroku likes it)
