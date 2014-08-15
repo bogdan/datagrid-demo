@@ -2,7 +2,7 @@
 
 Application that shows [Datagrid](https://github.com/bogdan/datagrid) in action
 
-Running application available on heroku [http://datagrid.heroku.com](http://datagrid.heroku.com)
+Running application available on heroku [http://datagrid.herokuapp.com](http://datagrid.herokuapp.com)
 
 
 ### Install
