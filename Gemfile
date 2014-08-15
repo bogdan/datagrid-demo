@@ -10,7 +10,7 @@ gem "bson_ext", "1.4.0"
 gem "carrierwave"
 gem "database_cleaner"
 group :development do
-  gem "debugger"
+  gem "debugger", platform: :ruby_19
 end
 
 
