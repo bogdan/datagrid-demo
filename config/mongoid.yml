@@ -1,26 +1,14 @@
-defaults: &defaults
-  host: localhost
-  # slaves:
-  #   - host: slave1.local
-  #     port: 27018
-  #   - host: slave2.local
-  #     port: 27019
-
 development:
-  <<: *defaults
-  database: pdb_development
-  autocreate_indexes: true
-
-test:
-  <<: *defaults
-  database: pdb_test
-  autocreate_indexes: true
-
-# set these environment variables on your prod server
+  sessions:
+    default:
+      database: pdb_development
+      hosts:
+        - localhost:27017
 production:
-  host: ds029187.mongolab.com
-  port: 29187
-  username: datagrid
-  password: catastrophe
-  database: datagrid_demo
-
+  sessions:
+    default:
+      database: datagrid_demo
+      hosts:
+        - ds029187.mongolab.com:29187
+      user: datagrid
+      password: catastrophe

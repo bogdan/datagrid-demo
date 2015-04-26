@@ -24,4 +24,5 @@ DatagridDemo::Application.configure do
 
   # Do not compress assets
   config.assets.compress = false
+  config.eager_load = false
 end

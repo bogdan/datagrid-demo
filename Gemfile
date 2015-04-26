@@ -1,14 +1,14 @@
 source 'http://rubygems.org'
-ruby '1.9.3'
+ruby '2.2.0'
 
-gem 'rails', '~> 3.1.0'
+gem 'rails', '~> 4.2.0'
 
 
 gem 'pg'
-gem "mongoid", "2.2.2"
-gem "bson", "1.4.0"
-gem "bson_ext", "1.4.0"
-gem "carrierwave"
+gem "mongoid", ">= 4.0.2"
+gem "bson"
+gem "bson_ext"
+gem "carrierwave", ">= 0.10.0"
 gem "database_cleaner"
 group :development do
   gem "debugger", platform: :ruby_19
@@ -23,11 +23,11 @@ gem "hirb"
 #gem "datagrid", :path => "/Users/bogdan/makabu/my/datagrid"
 gem "datagrid", :git => "git://github.com/bogdan/datagrid.git"
 gem "kaminari"
-gem "therubyracer"
+gem "therubyracer", "~> 0.12.2"
 
 group :assets do
-  gem 'sass-rails', "~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
+  gem 'sass-rails', '~> 5.0.3'
+  gem 'coffee-rails', "~> 4.0.1"
   gem 'uglifier'
 end
 
