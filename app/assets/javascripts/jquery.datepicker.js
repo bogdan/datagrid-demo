@@ -424,7 +424,6 @@
  **/
 		dpDisplay : function(e)
 		{
-      window.d = _w;
 			return _w.call(this, 'display', e);
 		},
 /**
