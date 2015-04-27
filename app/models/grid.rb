@@ -1,6 +1,6 @@
 class Grid < ActiveRecord::Base
 
-  default_scope :order => "grids.created_at desc"
+  default_scope -> { order("grids.created_at desc") }
 
   validates_presence_of :name, :code
 
