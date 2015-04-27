@@ -3,6 +3,8 @@ ruby '2.2.0'
 
 gem 'rails', '~> 4.2.0'
 
+gem 'puma', require: false
+
 
 gem 'pg'
 gem "mongoid", ">= 4.0.2"
