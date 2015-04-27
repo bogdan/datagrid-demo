@@ -44,5 +44,6 @@ module DatagridDemo
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    config.log_level = :debug
   end
 end
