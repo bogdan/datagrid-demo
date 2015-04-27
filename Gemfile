@@ -10,6 +10,8 @@ gem "bson"
 gem "bson_ext"
 gem "carrierwave", ">= 0.10.0"
 gem "database_cleaner"
+gem 'rails_12factor'
+
 group :development do
   gem "debugger", platform: :ruby_19
 end
