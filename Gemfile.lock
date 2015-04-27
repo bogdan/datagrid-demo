@@ -50,6 +50,10 @@ GEM
     bson (2.3.0)
     bson_ext (1.5.1)
     builder (3.2.2)
+    byebug (3.5.1)
+      columnize (~> 0.8)
+      debugger-linecache (~> 1.2)
+      slop (~> 3.6)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -65,12 +69,7 @@ GEM
     columnize (0.9.0)
     connection_pool (2.2.0)
     database_cleaner (1.4.1)
-    debugger (1.6.8)
-      columnize (>= 0.3.1)
-      debugger-linecache (~> 1.2.0)
-      debugger-ruby_core_source (~> 1.3.5)
     debugger-linecache (1.2.0)
-    debugger-ruby_core_source (1.3.8)
     erubis (2.7.0)
     execjs (2.5.2)
     ffaker (2.0.0)
@@ -149,6 +148,7 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
+    slop (3.6.0)
     sprockets (3.0.2)
       rack (~> 1.0)
     sprockets-rails (2.2.4)
@@ -174,11 +174,11 @@ DEPENDENCIES
   annotate
   bson
   bson_ext
+  byebug
   carrierwave (>= 0.10.0)
   coffee-rails (~> 4.0.1)
   database_cleaner
   datagrid!
-  debugger
   ffaker
   hirb
   jquery-rails

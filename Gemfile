@@ -13,7 +13,7 @@ gem "database_cleaner"
 gem 'rails_12factor'
 
 group :development do
-  gem "debugger", platform: :ruby_19
+  gem "byebug"
 end
 
 

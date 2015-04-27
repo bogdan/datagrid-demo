@@ -10,5 +10,5 @@ production:
       hosts:
         - ds029187.mongolab.com:29187
       database: datagrid_demo
-      user: datagrid
+      username: datagrid
       password: catastrophe
