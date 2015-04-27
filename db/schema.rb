@@ -9,31 +9,34 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120816072854) do
+ActiveRecord::Schema.define(version: 20120816072854) do
 
-  create_table "accounts", :force => true do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "accounts", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "grids", :force => true do |t|
+  create_table "grids", force: :cascade do |t|
     t.string   "name"
     t.text     "code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "projects", :force => true do |t|
+  create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "account_id"
   end
 
-  create_table "time_entries", :force => true do |t|
+  create_table "time_entries", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "project_id"
     t.float    "hours"
@@ -42,12 +45,12 @@ ActiveRecord::Schema.define(:version => 20120816072854) do
     t.datetime "updated_at"
   end
 
-  create_table "users", :force => true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.boolean  "disabled",          :default => false, :null => false
+    t.boolean  "disabled",          default: false, null: false
     t.string   "registration_type"
-    t.integer  "logins_count",      :default => 0,     :null => false
+    t.integer  "logins_count",      default: 0,     null: false
     t.datetime "registered_at"
     t.datetime "created_at"
     t.datetime "updated_at"
