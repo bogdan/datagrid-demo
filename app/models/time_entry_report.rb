@@ -28,7 +28,7 @@ class TimeEntryReport
 
 
   filter(:year, :enum, 
-    :select => lambda { (TimeEntry.minimum(:date).year..TimeEntry.maximum(:date).year)}, 
+         :select => lambda { TimeEntry.all.any? ? (TimeEntry.minimum(:date).year..TimeEntry.maximum(:date).year) : []}, 
     :include_blank => false, 
     :default => lambda {Date.today.year}
   ) do |value|
