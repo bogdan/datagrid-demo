@@ -4,9 +4,9 @@
 //= require date-format
 //= require_tree .
 
-Date.format = "yyyy-mm-dd"
+Date.format = "yyyy-mm-dd";
 $(document).ready(function() {
   sh_highlightDocument();
   $('.date_filter').datePicker({startDate: '2010-01-01'});
-  $("#dp-popup").addClass("dp-popup")
-})
+  $("#dp-popup").addClass("dp-popup");
+});

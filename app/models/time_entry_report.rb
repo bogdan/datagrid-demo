@@ -63,6 +63,6 @@ class TimeEntryReport
     end
   end
 
-  column(:report_hours)
+  column(:report_hours, order: "sum(time_entries.hours)")
 
 end
