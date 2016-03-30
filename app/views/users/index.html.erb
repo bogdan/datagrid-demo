@@ -1,0 +1,14 @@
+<h3>Users Report</h3>
+
+<div class="right">
+  <%= render :partial => "shared/source", :object => @users_grid %>
+</div>
+<div class="left">
+  <%= datagrid_form_for @users_grid, url: users_path %>
+
+
+  <div class='total'>Total: <%= @users_grid.assets.total_count %></div>
+  <%= datagrid_table(@users_grid) %>
+  <%= paginate @users_grid.assets %>
+</div>
+

@@ -1,4 +1,4 @@
-class DocumentReport
+class DocumentsGrid
 
   include Datagrid
 

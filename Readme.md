@@ -18,6 +18,6 @@ bundle exec rails server
 
 ### Content
 
-* Users report - shows basic features and principles
-* Time entries report - shows how advanced things could be built
+* Users grid - shows basic features and principles
+* Time entries grid - shows how advanced things could be built
 

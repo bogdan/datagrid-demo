@@ -1,0 +1,16 @@
+
+<h3>Time Entries Report</h3>
+
+
+<div class="left">
+  <%= datagrid_form_for @time_entries_grid, url: time_entries_path %>
+  <br/>
+
+  <%= datagrid_table(@time_entries_grid) %>
+  <%= paginate @time_entries_grid.assets %>
+
+</div>
+
+<div class="right">
+  <%= render :partial => "shared/source", :object => @time_entries_grid %>
+</div>

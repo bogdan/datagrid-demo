@@ -1,4 +1,4 @@
-class UserReport
+class UsersGrid
   include Datagrid
 
   #
