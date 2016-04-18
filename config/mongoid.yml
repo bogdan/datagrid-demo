@@ -5,10 +5,11 @@ development:
       hosts:
         - localhost:27017
 production:
-  sessions:
-    default:
-      hosts:
-        - ds029187.mongolab.com:29187
-      database: datagrid_demo
-      username: datagrid
-      password: catastrophe
+  uri: <%= ENV['MONGOHQ_URL'] %>
+  #sessions:
+    #default:
+      #hosts:
+        #- ds029187.mongolab.com:29187
+      #database: datagrid_demo
+      #username: datagrid
+      #password: catastrophe
