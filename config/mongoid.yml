@@ -6,6 +6,7 @@ development:
         - localhost:27017
 production:
   uri: <%= ENV['MONGOHQ_URL'] %>
+
   #sessions:
     #default:
       #hosts:
