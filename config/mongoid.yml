@@ -7,7 +7,7 @@ development:
 production:
   sessions:
     default:
-      uri: <%= ENV['MONGODB_URI'] %>
+      uri: mongodb://datagrid_new:HelloWorld@ds029187.mlab.com:29187/datagrid_demo
 
   #sessions:
     #default:
