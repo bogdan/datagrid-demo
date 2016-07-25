@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-ruby '2.2.0'
+ruby '2.3.0'
 
 gem 'rails', '~> 4.2.0'
 
@@ -28,6 +28,7 @@ gem "hirb"
 gem "datagrid", :git => "git://github.com/bogdan/datagrid.git"
 gem "kaminari"
 gem "therubyracer", "~> 0.12.2"
+gem "libv8", "3.16.14.13"
 
 group :assets do
   gem 'sass-rails', '~> 5.0.3'
