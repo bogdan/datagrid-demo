@@ -7,7 +7,7 @@ development:
 production:
   sessions:
     default:
-      uri: <%= ENV['MONGOHQ_URL'] %>
+      uri: <%= ENV['MONGODB_URI'] %>
 
   #sessions:
     #default:
