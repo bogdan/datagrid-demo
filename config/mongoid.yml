@@ -1,13 +1,18 @@
 development:
-  sessions:
+  clients:
     default:
       database: pdb_development
       hosts:
         - localhost:27017
 production:
-  sessions:
+  clients:
     default:
       uri: mongodb://datagrid_new:HelloWorld@ds029187.mlab.com:29187/datagrid_demo
+      #database: datagrid_demo
+      #username: datagrid_new 
+      #password: HelloWorld
+      #hosts:
+        #- ds029187.mlab.com:29187/datagrid_demo
 
   #sessions:
     #default:
