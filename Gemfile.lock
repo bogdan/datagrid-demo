@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/bogdan/datagrid.git
+  remote: https://github.com/bogdan/datagrid.git
   revision: 2f3a35f5f2f445af7d002122d4323b7a29f2af58
   specs:
     datagrid (1.5.7)
@@ -89,6 +89,9 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
+    kaminari-mongoid (1.0.1)
+      kaminari-core (~> 1.0)
+      mongoid
     libv8 (3.16.14.19)
     loofah (2.1.1)
       crass (~> 1.0.2)
@@ -193,6 +196,7 @@ DEPENDENCIES
   jquery-rails
   json (= 2.1.0)
   kaminari
+  kaminari-mongoid
   libv8
   mongoid (>= 4.0.2)
   pg
