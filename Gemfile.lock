@@ -194,7 +194,7 @@ DEPENDENCIES
   ffaker
   hirb
   jquery-rails
-  json (= 2.1.0)
+  json
   kaminari
   kaminari-mongoid
   libv8

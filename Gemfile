@@ -20,7 +20,7 @@ end
 
 
 
-gem 'json', '2.1.0'
+gem 'json'
 gem "annotate"
 gem "ffaker"
 gem "hirb"
