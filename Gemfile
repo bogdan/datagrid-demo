@@ -24,7 +24,7 @@ gem 'json'
 gem "annotate"
 gem "ffaker"
 gem "hirb"
-#gem "datagrid", :path => "/Users/bogdan/makabu/my/datagrid"
+# gem "datagrid", :path => "/Users/bogdan/makabu/my/datagrid"
 gem "datagrid", :git => "https://github.com/bogdan/datagrid.git"
 gem "kaminari"
 gem "kaminari-mongoid"

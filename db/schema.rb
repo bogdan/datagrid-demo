@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -16,41 +15,43 @@ ActiveRecord::Schema.define(version: 20120816072854) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "accounts", force: :cascade do |t|
-    t.string   "name"
+  create_table "accounts", id: :serial, force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "grids", force: :cascade do |t|
-    t.string   "name"
-    t.text     "code"
+  create_table "grids", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.text "code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "projects", force: :cascade do |t|
-    t.string   "name"
+  create_table "projects", id: :serial, force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "account_id"
+    t.integer "account_id"
   end
 
-  create_table "time_entries", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "project_id"
-    t.float    "hours"
-    t.date     "date"
+  create_table "time_entries", id: :serial, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "project_id"
+    t.float "hours"
+    t.date "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index "date_part('month'::text, date)", name: "date_month"
+    t.index "date_part('year'::text, date)", name: "date_year"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.boolean  "disabled",          default: false, null: false
-    t.string   "registration_type"
-    t.integer  "logins_count",      default: 0,     null: false
+  create_table "users", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.boolean "disabled", default: false, null: false
+    t.string "registration_type"
+    t.integer "logins_count", default: 0, null: false
     t.datetime "registered_at"
     t.datetime "created_at"
     t.datetime "updated_at"

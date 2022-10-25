@@ -1,4 +1,4 @@
-class CreateGrids < ActiveRecord::Migration
+class CreateGrids < ActiveRecord::Migration[4.2]
   def up
     create_table :grids do |t|
       t.string :name
