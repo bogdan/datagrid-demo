@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
-ruby '2.4.2'
+ruby '3.2.2'
 
-gem 'rails', '~> 5.0'
+gem 'rails', '7.1.2'
 
 gem 'puma', require: false
 
@@ -9,7 +9,7 @@ gem 'puma', require: false
 gem 'pg'
 gem "mongoid", ">= 4.0.2"
 gem "bson"
-gem "bson_ext"
+# gem "bson_ext"
 #gem "carrierwave"
 gem "database_cleaner"
 gem 'rails_12factor'
@@ -28,8 +28,8 @@ gem "hirb"
 gem "datagrid", :git => "https://github.com/bogdan/datagrid.git"
 gem "kaminari"
 gem "kaminari-mongoid"
-gem "therubyracer"
-gem "libv8"
+# gem "therubyracer"
+# gem "libv8"
 
 group :assets do
   gem 'sass-rails'
