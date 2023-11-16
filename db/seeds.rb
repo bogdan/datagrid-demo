@@ -1,5 +1,7 @@
 require 'database_cleaner/active_record'
 DatabaseCleaner.clean_with(:truncation)
+DatabaseCleaner.allow_production = true
+DatabaseCleaner.allow_remote_database_url = true
 
 Project.transaction do
   ["Google", "Apple", "Microsoft"].each do |name|
