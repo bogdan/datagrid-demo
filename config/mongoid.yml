@@ -8,3 +8,6 @@ production:
   clients:
     default:
       uri: <%= ENV.fetch("ORMONGO_RS_URL") %>
+      database: 'datagrid_demo_production'
+      user: 'datagrid_demo_production'
+      password: <%= ENV.fetch('ORMONGO_PASSWORD') %>
