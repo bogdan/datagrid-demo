@@ -1,6 +1,4 @@
-class DocumentsGrid
-
-  include Datagrid
+class DocumentsGrid < BaseGrid
 
   scope do
     Document.desc(:created_at)
@@ -19,9 +17,9 @@ class DocumentsGrid
   end
 
   filter :condition, :dynamic, :header => "Dynamic condition"
-  column :title 
-  column :author 
-  column :rating 
+  column :title
+  column :author
+  column :rating
   column :created_at do
     self.created_at.to_date
   end

@@ -1,4 +1,4 @@
-
+ 
 =inline-block
   display: inline-block
   zoom: 1
@@ -30,7 +30,7 @@ table.datagrid
     text-align: left
 
   td,
-  th 
+  th
     border: 1px solid #d6d6d6
     padding: 5px 10px
 
@@ -55,15 +55,25 @@ table.datagrid
     text-align: center
   tr
     background-color: white
-    
+
 
 table.datagrid
-  td, th 
+  td, th
     &.id
       min-width: 30px
     &.created_at
       min-width: 80px
 
+
+.datagrid-filter 
+  input[class*='filter'] 
+    width: 300px
+  select
+    width: 328px
+  input.from, input.to
+    width: 130px !important
+  select.dynamic_filter.field
+    width: 270px
 
 
 
@@ -134,7 +144,4 @@ table.datagrid
     height: 1%
   *:first-child+html &
     overflow: hidden
-  
-
-
 

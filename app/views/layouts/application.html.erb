@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>DatagridDemo</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>DatagridDemo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-<div style="float:left">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+ <div style="float:left">
   <a href="https://github.com/bogdan/datagrid"> Gem source code</a>
   <a href="https://github.com/bogdan/datagrid-demo"> Demo source code</a>
 </div>
@@ -17,7 +20,9 @@
 </div>
 <div style="clear:both"></div>
 <hr/>
-<%= render :partial => 'shared/grids' %>
+<%= link_to "User Grid (basic)", users_path %>
+<%= link_to "Time Entry Grid (advanced)", time_entries_path %>
+<%= link_to "Document Grid (Mongoid)", documents_path %>
 <%= yield %>
 
 
@@ -36,6 +41,5 @@
 
    </script>
  <% end %>
-</body>
+  </body>
 </html>
-

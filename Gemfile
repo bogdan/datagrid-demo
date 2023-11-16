@@ -1,41 +1,84 @@
-source 'http://rubygems.org'
-ruby '3.2.2'
+source "https://rubygems.org"
 
-gem 'rails', '7.1.2'
+ruby "3.2.2"
 
-gem 'puma', require: false
+# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem "rails", "~> 7.1.2"
 
+# Use sqlite3 as the database for Active Record
+gem "sqlite3", "~> 1.4"
 
-gem 'pg'
-gem "mongoid", ">= 4.0.2"
-gem "bson"
-# gem "bson_ext"
-#gem "carrierwave"
-gem "database_cleaner"
-gem 'rails_12factor'
+# Use the Puma web server [https://github.com/puma/puma]
+gem "puma", ">= 5.0"
+
+# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
+gem "importmap-rails"
+
+# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+gem "turbo-rails"
+
+# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+gem "stimulus-rails"
+
+# Build JSON APIs with ease [https://github.com/rails/jbuilder]
+gem "jbuilder"
+
+# Use Redis adapter to run Action Cable in production
+gem "redis", ">= 4.0.1"
+
+# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
+# gem "kredis"
+
+# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
+# gem "bcrypt", "~> 3.1.7"
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem "tzinfo-data", platforms: %i[ windows jruby ]
+
+# Reduces boot times through caching; required in config/boot.rb
+gem "bootsnap", require: false
+
+# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
+# gem "image_processing", "~> 1.2"
+
+group :development, :test do
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "debug", platforms: %i[ mri windows ]
+end
 
 group :development do
-  gem "byebug"
+  # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "web-console"
+
+  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
+  # gem "rack-mini-profiler"
+
+  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
+  # gem "spring"
 end
 
-
-
-gem 'json'
-gem "annotate"
-gem "ffaker"
-gem "hirb"
-# gem "datagrid", :path => "/Users/bogdan/makabu/my/datagrid"
-gem "datagrid", :git => "https://github.com/bogdan/datagrid.git"
-gem "kaminari"
-gem "kaminari-mongoid"
-# gem "therubyracer"
-# gem "libv8"
-
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
+group :test do
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "capybara"
+  gem "selenium-webdriver"
 end
 
-gem 'jquery-rails'
+gem "datagrid", "~> 1.7"
 
+gem "kaminari", "~> 1.2"
+
+gem "sass-rails", "~> 6.0"
+
+gem "ffaker", "~> 2.23"
+
+gem "database_cleaner", "~> 2.0"
+
+gem "mongoid", "~> 8.1"
+
+gem "hirb", "~> 0.7.3"
+
+gem "pg", "~> 1.5"
+
+gem "kaminari-mongoid", "~> 1.0"
+
+gem "jquery-rails", "~> 4.6"

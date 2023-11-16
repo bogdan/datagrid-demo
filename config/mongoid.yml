@@ -1,23 +1,6 @@
 development:
   clients:
     default:
-      database: pdb_development
+      database: mongoid
       hosts:
         - localhost:27017
-production:
-  clients:
-    default:
-      uri: mongodb://datagrid_new:HelloWorld@ds029187.mlab.com:29187/datagrid_demo
-      #database: datagrid_demo
-      #username: datagrid_new 
-      #password: HelloWorld
-      #hosts:
-        #- ds029187.mlab.com:29187/datagrid_demo
-
-  #sessions:
-    #default:
-      #hosts:
-        #- ds029187.mongolab.com:29187
-      #database: datagrid_demo
-      #username: datagrid
-      #password: catastrophe

@@ -1,23 +1,24 @@
-## Datagrid demo application
+# README
 
-Application that shows [Datagrid](https://github.com/bogdan/datagrid) in action
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-Running application available on heroku [http://datagrid.herokuapp.com](http://datagrid.herokuapp.com)
+Things you may want to cover:
 
-### Install
+* Ruby version
 
-Database: **postresql** (because heroku likes it)
+* System dependencies
 
-```
-git clone git://github.com/bogdan/datagrid-demo.git
-cd datagrid-demo
-bundle
-bundle exec rake db:create db:migrate db:seed
-bundle exec rails server
-```
+* Configuration
 
-### Content
+* Database creation
 
-* Users grid - shows basic features and principles
-* Time entries grid - shows how advanced things could be built
+* Database initialization
 
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...

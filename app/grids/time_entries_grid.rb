@@ -1,6 +1,4 @@
-class TimeEntriesGrid
-
-  include Datagrid
+class TimeEntriesGrid < BaseGrid
 
   #
   # Scope
