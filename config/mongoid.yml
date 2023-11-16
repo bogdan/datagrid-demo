@@ -7,4 +7,4 @@ development:
 production:
   clients:
     default:
-      uri: mongodb://datagrid_new:HelloWorld@ds029187.mlab.com:29187/datagrid_demo
+      uri: <%= ENV.fetch("ORMONGO_URL")
