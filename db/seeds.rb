@@ -1,3 +1,4 @@
+require 'database_cleaner/active_record'
 DatabaseCleaner.clean_with(:truncation)
 
 Project.transaction do
