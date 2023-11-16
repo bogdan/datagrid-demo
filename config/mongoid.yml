@@ -4,3 +4,7 @@ development:
       database: mongoid
       hosts:
         - localhost:27017
+production:
+  clients:
+    default:
+      uri: mongodb://datagrid_new:HelloWorld@ds029187.mlab.com:29187/datagrid_demo
