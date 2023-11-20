@@ -306,7 +306,6 @@ DEPENDENCIES
   jquery-rails (~> 4.6)
   kaminari (~> 1.2)
   kaminari-mongoid (~> 1.0)
-  mongoid (~> 8.1)
   pg (~> 1.5)
   puma (>= 5.0)
   rails (~> 7.1.2)
