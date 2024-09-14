@@ -67,7 +67,6 @@ gem "datagrid", "~> 1.7"
 
 gem "kaminari", "~> 1.2"
 
-gem "sass-rails", "~> 6.0"
 
 gem "ffaker", "~> 2.23"
 
@@ -86,3 +85,5 @@ gem "jquery-rails", "~> 4.6"
 gem "tailwindcss-rails", "~> 2.7"
 
 gem "haml-rails", "~> 2.1"
+
+gem "sassc-rails", "~> 2.1"
