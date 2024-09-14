@@ -32,8 +32,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_11_102306) do
     t.integer "project_id"
     t.float "hours"
     t.date "date"
-    t.index "date_part('month'::text, date)", name: "date_month"
-    t.index "date_part('year'::text, date)", name: "date_year"
+    t.index "EXTRACT(month FROM date)", name: "date_month"
+    t.index "EXTRACT(year FROM date)", name: "date_year"
   end
 
   create_table "users", force: :cascade do |t|
