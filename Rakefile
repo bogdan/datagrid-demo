@@ -5,6 +5,6 @@ require_relative "config/application"
 
 Rails.application.load_tasks
 
-Rake::Task["assets:precompile"].enhance([:environment]) do
+Rake::Task["environment"].enhance do
   puts 'SassC version', SassC::VERSION
 end
