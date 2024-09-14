@@ -4,3 +4,9 @@
 require_relative "config/application"
 
 Rails.application.load_tasks
+
+namespace :assets do
+  task :precompile do
+    puts 'SassC version', SassC::VERSION
+  end
+end
