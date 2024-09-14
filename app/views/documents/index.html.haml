@@ -1,0 +1,9 @@
+%h3 Documents Grid
+.left
+  = datagrid_form_for @documents_grid, url: documents_path
+  .total
+    Total: #{@documents_grid.assets.count}
+  = datagrid_table(@documents_grid)
+  = paginate @documents_grid.assets
+.right
+  = render :partial => "shared/source", :object => @documents_grid

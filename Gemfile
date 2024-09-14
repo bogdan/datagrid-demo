@@ -82,3 +82,7 @@ gem "pg", "~> 1.5"
 gem "kaminari-mongoid", "~> 1.0"
 
 gem "jquery-rails", "~> 4.6"
+
+gem "tailwindcss-rails", "~> 2.7"
+
+gem "haml-rails", "~> 2.1"

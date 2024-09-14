@@ -1,0 +1,8 @@
+- grid ||= source
+.prose
+  %h3 Grid:
+  = file_source("grids/#{grid.class.to_s.underscore}.rb")
+  %h3 Controller:
+  = file_source("controllers/#{controller.class.to_s.underscore}.rb")
+  %h3 View:
+  = file_source("views/#{controller_name}/index.html.haml", "haml")

@@ -54,6 +54,6 @@ class UsersGrid < BaseGrid
   end
 
   column(:actions, html: true, mandatory: true) do |record|
-    link_to "Delete", "javascript:alert('Oh common! This is a demo.')"
+    link_to "Delete", "javascript:alert('Oh common! This is a demo.')", class: 'btn btn-primary'
   end
 end

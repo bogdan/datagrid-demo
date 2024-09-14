@@ -6,9 +6,14 @@ class TimeEntriesGrid < BaseGrid
 
   scope do
     User.select(
-      "users.name, projects.name as project_name, accounts.name as account_name, sum(time_entries.hours) as report_hours"
-    ).joins(:time_entries => {:project => :account}).group("projects.name", "users.name", "accounts.name").order("users.name")
-
+      "users.name",
+      "projects.name as project_name",
+      "accounts.name as account_name",
+      "sum(time_entries.hours) as report_hours"
+    ).joins(
+      time_entries: {project: :account}
+    ).group("projects.name", "users.name", "accounts.name").
+    order("users.name")
   end
 
 
@@ -16,8 +21,9 @@ class TimeEntriesGrid < BaseGrid
   # Filters
   #
 
-  filter(:project_id, :enum,
-    :select => lambda {Project.all.map {|p| [p.name, p.id]}},
+  filter(
+    :project_id, :enum,
+    :select => :project_id_select,
     :multiple => true,
     :include_blank => false
   ) do |value|
@@ -25,21 +31,29 @@ class TimeEntriesGrid < BaseGrid
   end
 
 
-  filter(:year, :enum,
-         :select => lambda { TimeEntry.all.any? ? (TimeEntry.minimum(:date).year..TimeEntry.maximum(:date).year) : []},
+  filter(
+    :year, :enum,
+    :select => :year_select,
     :include_blank => false,
     :default => lambda {Date.today.year}
   ) do |value|
-    self.where(["extract(year from time_entries.date) = ?", value.to_i])
+    self.where([
+      "extract(year from time_entries.date) = ?",
+      value.to_i
+    ])
   end
 
-  filter(:month, :enum,
-         :select => Date::MONTHNAMES[1..12].enum_for(:each_with_index).collect {|name, index| [name, index + 1]},
-         :include_blank => false,
-         :default => lambda {Date.today.month}
-        ) do |value|
+  filter(
+    :month, :enum,
+    :select => :month_select,
+    :include_blank => false,
+    :default => lambda {Date.today.month}
+  ) do |value|
 
-    self.where(["extract(month from time_entries.date) = ?", value.to_i])
+    self.where([
+      "extract(month from time_entries.date) = ?",
+      value.to_i
+    ])
   end
 
 
@@ -63,4 +77,16 @@ class TimeEntriesGrid < BaseGrid
 
   column(:report_hours, order: "sum(time_entries.hours)")
 
+  protected
+
+  def year_select
+    TimeEntry.all.any? ? (TimeEntry.minimum(:date).year..TimeEntry.maximum(:date).year) : []
+  end
+  def month_select
+    Date::MONTHNAMES[1..12].enum_for(:each_with_index).collect {|name, index| [name, index + 1]}
+  end
+
+  def project_id_select
+    Project.all.map {|p| [p.name, p.id]}
+  end
 end
