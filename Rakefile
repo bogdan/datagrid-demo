@@ -4,7 +4,3 @@
 require_relative "config/application"
 
 Rails.application.load_tasks
-
-Rake::Task["environment"].enhance do
-  puts 'SassC version', SassC::VERSION
-end
