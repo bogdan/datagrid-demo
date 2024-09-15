@@ -1,4 +1,3 @@
-%div{:style => "float: left"}
+.w-full
   = model.account_name
-= image_tag("http://www.#{model.account_name}.com/favicon.ico", :style => "padding-left: 5px; float: right; width: 16px; height: 16px")
-%div{:style => "clear: both"}
+  %img.w-4.justify-end.text-end.inline-block{src: "http://www.#{model.account_name}.com/favicon.ico"}

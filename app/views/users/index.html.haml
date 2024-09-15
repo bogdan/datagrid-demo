@@ -1,7 +1,7 @@
 .grid-index-grid
   %div{class: 'overflow-x-auto max-w-full p-4'}
     = datagrid_form_for @users_grid, url: users_path
-    .total
+    .px-7.text-bold
       Total: #{@users_grid.assets.total_count}
     = datagrid_table(@users_grid)
     = paginate @users_grid.assets
