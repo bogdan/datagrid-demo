@@ -1,9 +1,12 @@
-%h3 Documents Grid
-.left
-  = datagrid_form_for @documents_grid, url: documents_path
-  .total
-    Total: #{@documents_grid.assets.count}
-  = datagrid_table(@documents_grid)
-  = paginate @documents_grid.assets
-.right
-  = render :partial => "shared/source", :object => @documents_grid
+- grid = @documents_grid
+
+.grid-index-grid
+  %div{class: 'overflow-x-auto max-w-full p-4'}
+    = datagrid_form_for grid, url: users_path
+    .text-xl.m-3
+      Total: #{grid.assets.total_count}
+    = datagrid_table(grid)
+    = paginate grid.assets
+  %div
+    = render :partial => "shared/source", :object => grid
+
