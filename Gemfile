@@ -67,7 +67,6 @@ gem "datagrid", "~> 1.7"
 
 gem "kaminari", "~> 1.2"
 
-
 gem "ffaker", "~> 2.23"
 
 gem "database_cleaner", "~> 2.0"
