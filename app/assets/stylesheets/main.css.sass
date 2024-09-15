@@ -1,60 +1,38 @@
- 
-=inline-block
-  display: inline-block
-  zoom: 1
-  *display: inline
+// table.datagrid
+  // border-collapse: collapse
+  // max-width: 100%
+  // z-index: 10000
 
-= clearfix
-  *zoom: 1
+  // th
+    // background-color: #eee
+    // text-align: left
 
-  &:before,
-  &:after
-    display: table
-    content: ''
+  // td,
+  // th
+    // border: 1px solid #d6d6d6
+    // padding: 5px 10px
 
-  &:after
-    clear: both
+    // .order
+      // a.asc, a.desc
+        // text-decoration: none
+        // font-weight: normal
 
+    // &.ordered
+      // background-color: #fff7d5
 
-body
-  font-family: sans-serif
+      // &.asc
+        // a.asc
+          // font-weight: bold
+          // color: #d00
 
-table.datagrid
-  //background-color: transparent
-  border-collapse: collapse
-  max-width: 100%
-  z-index: 10000
-
-  th
-    background-color: #eee
-    text-align: left
-
-  td,
-  th
-    border: 1px solid #d6d6d6
-    padding: 5px 10px
-
-    .order
-      a.asc, a.desc
-        text-decoration: none
-        font-weight: normal
-
-    &.ordered
-      background-color: #fff7d5
-
-      &.asc
-        a.asc
-          font-weight: bold
-          color: #d00
-
-      &.desc
-        a.desc
-          font-weight: bold
-          color: #d00
-  .noresults
-    text-align: center
-  tr
-    background-color: white
+      // &.desc
+        // a.desc
+          // font-weight: bold
+          // color: #d00
+  // .noresults
+    // text-align: center
+  // tr
+    // background-color: white
 
 
 table.datagrid
@@ -74,56 +52,3 @@ table.datagrid
     width: 144px !important
   select.dynamic_filter.field
     width: 242px
-
-
-
-.pagination
-  background: white
-  margin: 5px auto
-  text-align: center
-  cursor: default
-  a, span, em
-    display: block
-    float: left
-    margin-right: 1px
-  .disabled
-    color: #999999
-    border: 1px solid #dddddd
-  .current
-    font-style: normal
-    font-weight: bold
-    background: #2e6ab1
-    color: white
-    border: 1px solid #2e6ab1
-  a, .current
-    padding: 0.2em 0.5em
-  a
-    text-decoration: none
-    color: #105cb6
-    border: 1px solid #9aafe5
-    &:hover, &:focus
-      color: #000033
-      border-color: #000033
-  .page_info
-    background: #2e6ab1
-    color: white
-    padding: 0.4em 0.6em
-    width: 22em
-    margin-bottom: 0.3em
-    text-align: center
-    b
-      color: #000033
-      background: lighten(#2e6ab1, 60%)
-      padding: 0.1em 0.25em
-  /* self-clearing method:
-  &:after
-    content: "."
-    display: block
-    height: 0
-    clear: both
-    visibility: hidden
-  * html &
-    height: 1%
-  *:first-child+html &
-    overflow: hidden
-

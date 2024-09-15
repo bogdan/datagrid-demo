@@ -1,12 +1,12 @@
 - grid = @users_grid
 
 .grid-index-grid
-  %div{class: 'overflow-x-auto max-w-full p-4 overflow-y-hidden'}
+  %div{class: 'overflow-x-auto p-4 overflow-y-hidden'}
     = datagrid_form_for grid, url: users_path
     .text-xl.m-3
       Total: #{grid.assets.total_count}
-    = datagrid_table(grid)
-    = paginate grid.assets
+    = datagrid_table(grid, html: {class: 'table'})
+    = paginate grid.assets, window: 3
   %div
     = render :partial => "shared/source", :object => grid
 

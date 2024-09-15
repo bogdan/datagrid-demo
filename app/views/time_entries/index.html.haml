@@ -1,8 +1,8 @@
 .grid-index-grid
-  %div{class: 'overflow-x-auto max-w-full p-4'}
+  %div{class: 'overflow-x-auto p-4'}
     = datagrid_form_for @time_entries_grid, url: time_entries_path
     %br/
     = datagrid_table(@time_entries_grid)
-    = paginate @time_entries_grid.assets
+    = paginate @time_entries_grid.assets, window: 2
   %div
     = render :partial => "shared/source", :object => @time_entries_grid
