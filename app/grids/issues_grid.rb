@@ -2,7 +2,7 @@ require 'net/http'
 require 'json'
 require 'uri'
 
-class IssuesGrid < BaseGrid
+class IssuesGrid < ApplicationGrid
   FILTERS = %w(all assigned created repos)
   STATES = %w(all open closed)
   PER_PAGE = 10

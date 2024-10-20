@@ -1,4 +1,4 @@
-class TimeEntriesGrid < BaseGrid
+class TimeEntriesGrid < ApplicationGrid
 
   #
   # Scope

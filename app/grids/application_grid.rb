@@ -1,4 +1,4 @@
-class BaseGrid
+class ApplicationGrid
   include Datagrid
 
   def param_name

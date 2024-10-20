@@ -1,4 +1,4 @@
-class UsersGrid < BaseGrid
+class UsersGrid < ApplicationGrid
 
   #
   # Scope

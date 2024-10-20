@@ -1,4 +1,4 @@
-class DocumentsGrid < BaseGrid
+class DocumentsGrid < ApplicationGrid
 
   scope do
     Document.desc(:created_at)
