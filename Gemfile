@@ -63,7 +63,9 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "datagrid", "~> 1.7"
+# gem "datagrid", "~> 1.7"
+gem "datagrid", github: 'bogdan/datagrid', branch: 'main'
+# gem "datagrid", path: '../datagrid'
 
 gem "kaminari", "~> 1.2"
 
@@ -86,3 +88,5 @@ gem "tailwindcss-rails", "~> 2.7"
 gem "haml-rails", "~> 2.1"
 
 gem "sassc-rails", "~> 2.1"
+
+gem "http_logger", "~> 0.7.0"

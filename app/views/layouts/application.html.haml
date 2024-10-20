@@ -24,8 +24,9 @@
 
     %main.px-6
       .tabs.tabs-bordered.tabs-lg.flex.mb-6{role: 'tablist'}
-        %a.tab.flex-1{ role: 'tab', href: users_path, class: ("tab-active" if current_page?(users_path)) } User Grid (basic)
-        %a.tab.flex-1{ role: 'tab', href: time_entries_path, class: ("tab-active" if current_page?(time_entries_path)) } Time Sheets Grid (advanced)
+        %a.tab.flex-1{ role: 'tab', href: users_path, class: ("tab-active" if current_page?(users_path)) } Users (Basic)
+        %a.tab.flex-1{ role: 'tab', href: time_entries_path, class: ("tab-active" if current_page?(time_entries_path)) } Time Sheets (Advanced)
+        %a.tab.flex-1{ role: 'tab', href: issues_path, class: ("tab-active" if current_page?(issues_path)) } Issues (API)
 
       = yield
     - if Rails.env.production?

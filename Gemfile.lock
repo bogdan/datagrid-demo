@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/bogdan/datagrid.git
+  revision: 8f871570de9285329a53ceeb6975e3391f606e7c
+  branch: main
+  specs:
+    datagrid (1.8.2)
+      railties (>= 6.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -102,8 +110,6 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
-    datagrid (1.7.0)
-      railties (>= 6.0)
     date (3.3.4)
     debug (1.8.0)
       irb (>= 1.5.0)
@@ -125,6 +131,7 @@ GEM
       haml (>= 4.0.6)
       railties (>= 5.1)
     hirb (0.7.3)
+    http_logger (0.7.0)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.2.3)
@@ -309,11 +316,12 @@ DEPENDENCIES
   bootsnap
   capybara
   database_cleaner (~> 2.0)
-  datagrid (~> 1.7)
+  datagrid!
   debug
   ffaker (~> 2.23)
   haml-rails (~> 2.1)
   hirb (~> 0.7.3)
+  http_logger (~> 0.7.0)
   importmap-rails
   jbuilder
   jquery-rails (~> 4.6)

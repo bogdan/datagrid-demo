@@ -1,0 +1,16 @@
+- grid = @grid
+
+.grid-index-grid
+  %div{class: 'overflow-x-auto p-4 overflow-y-hidden'}
+    = datagrid_form_for grid, url: issues_path
+    = datagrid_table(grid, html: {class: 'table'})
+  
+    %nav.join.my-3.mx-auto.w-full
+      = link_to_previous_page grid.assets, "prev", class: 'btn join-item'
+      .btn.join-item.btn-active= grid.assets.current_page
+      - if grid.next_page?
+        = link_to_next_page grid.assets, "next", class: 'btn join-item'
+  %div
+    = render partial: "shared/source", object: grid
+
+
