@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/bogdan/datagrid.git
-  revision: bd963681d74f5ca2febf66b866ced3b2fecc0c2f
+  revision: f766b108f823fe47817dbf21d17f705c44d8d207
   branch: main
   specs:
     datagrid (1.8.2)

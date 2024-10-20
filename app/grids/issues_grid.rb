@@ -20,6 +20,18 @@ class IssuesGrid < BaseGrid
     end
   end
 
+  def self.api_order(value)
+    {
+      # Disable default order behavior
+      # because it is happening on the API side.
+      order: -> { _1 },
+      order_desc: -> { _1 },
+      # Special configuration option that makes it convinient to asociate
+      # API order value with column name that may not match.
+      api_order: value,
+    }
+  end
+
   filter(
     :filter, :enum,
     select: FILTERS.map { [_1.humanize, _1] },
@@ -34,7 +46,12 @@ class IssuesGrid < BaseGrid
     dummy: true,
     include_blank: false,
   )
-  filter(:since, :datetime, header: 'Updated Since', dummy: true, input_options: {type: 'date'})
+  filter(
+    :since, :datetime,
+    header: 'Updated Since',
+    dummy: true,
+    input_options: {type: 'date'},
+  )
 
   column(:number) do |issue|
     format(issue[:number]) do |value|
@@ -57,17 +74,17 @@ class IssuesGrid < BaseGrid
     issue[:state].humanize
   end
 
-  column(:comments) do |issue|
+  column(:comments, **api_order(:comments)) do |issue|
     issue[:comments]
   end
 
-  column(:created_at) do |issue|
+  column(:created_at, **api_order(:created)) do |issue|
     format(Time.parse(issue[:created_at])) do |value|
       time_ago_in_words(value) + " ago"
     end
   end
 
-  column(:updated_at) do |issue|
+  column(:updated_at, **api_order(:updated)) do |issue|
     format(Time.parse(issue[:updated_at])) do |value|
       time_ago_in_words(value) + " ago"
     end
