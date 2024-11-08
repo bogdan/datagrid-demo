@@ -1,16 +1,9 @@
-table.datagrid
-  td, th
-    &.id
-      min-width: 30px
-    &.created_at
-      min-width: 80px
+.table
+  th
+    vertical-align: top;
+td, th
+  &[data-column=id]
+    min-width: 30px
+  &[data-column=registered_at]
+    min-width: 120px
 
-.datagrid-filter 
-  input[class*='filter'] 
-    width: 300px
-  select
-    width: 300px
-  input.from, input.to
-    width: 144px !important
-  select.dynamic_filter.field
-    width: 242px

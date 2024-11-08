@@ -16,7 +16,7 @@ class IssuesGrid < ApplicationGrid
 
   dynamic do
     scope do
-      IssuesGrid.fetch(api_attributes)
+      @_assets ||= IssuesGrid.fetch(api_attributes)
     end
   end
 
@@ -53,7 +53,9 @@ class IssuesGrid < ApplicationGrid
     input_options: {type: 'date'},
   )
 
-  column(:number) do |issue|
+  column_names_filter(checkboxes: true, header: 'Extra Columns')
+
+  column(:id, mandatory: true) do |issue|
     format(issue[:number]) do |value|
       link_to "##{value}", issue[:html_url], class: 'link'
     end
@@ -62,15 +64,15 @@ class IssuesGrid < ApplicationGrid
   column(:author) do |issue|
     user = issue[:user]
     format(user[:login]) do |value|
-      link_to value, user[:html_url], class: 'link'
+      link_to "@" + value, user[:html_url], class: 'link'
     end
   end
 
-  column(:title) do |issue|
+  column(:title, mandatory: true) do |issue|
     issue[:title]
   end
 
-  column(:state) do |issue|
+  column(:state, mandatory: true) do |issue|
     issue[:state].humanize
   end
 
@@ -78,7 +80,11 @@ class IssuesGrid < ApplicationGrid
     issue[:comments]
   end
 
-  column(:created_at, **api_order(:created)) do |issue|
+  column(:type, mandatory: true) do |issue|
+    issue.key?(:pull_request) ? 'PR' : 'Issue'
+  end
+
+  column(:created_at, mandatory: true, **api_order(:created)) do |issue|
     format(Time.parse(issue[:created_at])) do |value|
       time_ago_in_words(value) + " ago"
     end
@@ -138,8 +144,6 @@ class IssuesGrid < ApplicationGrid
   end
 
   def api_attributes
-    attributes = attributes.clone
-
     {
       sort: api_sort,
       direction: api_direction,

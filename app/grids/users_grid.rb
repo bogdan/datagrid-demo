@@ -19,7 +19,7 @@ class UsersGrid < ApplicationGrid
   filter(
     :logins_count, :integer,
     range: true,
-    default: proc { [User.minimum(:logins_count), User.maximum(:logins_count)]},
+    default: proc { User.minimum(:logins_count)..User.maximum(:logins_count)},
     input_options: {type: 'number'},
   )
   filter(:registered_at, :date, range: true, input_options: {type: 'date'})
@@ -46,7 +46,9 @@ class UsersGrid < ApplicationGrid
   end
   column(:logins_count)
   column(:registered_at) do |record|
-    record.registered_at.to_date
+    format(record.registered_at.to_date) do |value|
+      value.strftime("%b %d, %Y")
+    end
   end
   column(:age, header: "Registration Age") do |record|
     age = (DateTime.now.in_time_zone - record.registered_at) / 1.day
