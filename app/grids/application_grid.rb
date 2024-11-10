@@ -1,5 +1,4 @@
-class ApplicationGrid
-  include Datagrid
+class ApplicationGrid < Datagrid::Base
 
   def self.boolean_column(name, **options, &block)
     column(name, **options) do |model|

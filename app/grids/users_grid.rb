@@ -20,9 +20,8 @@ class UsersGrid < ApplicationGrid
     :logins_count, :integer,
     range: true,
     default: proc { User.minimum(:logins_count)..User.maximum(:logins_count)},
-    input_options: {type: 'number'},
   )
-  filter(:registered_at, :date, range: true, input_options: {type: 'date'})
+  filter(:registered_at, :date, range: true)
   filter(:condition, :dynamic, header: "Dynamic condition")
   column_names_filter(header: "Extra Columns", checkboxes: true)
 
@@ -33,7 +32,7 @@ class UsersGrid < ApplicationGrid
   column(:id, mandatory: true)
   column(:email, mandatory: true) do |model|
     format(model.email) do |value|
-      link_to value, "mailto:#{value}"
+      link_to value, "mailto:#{value}", class: 'link', target: '_blank'
     end
   end
   column(:name, mandatory: true)

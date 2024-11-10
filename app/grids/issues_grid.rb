@@ -50,7 +50,6 @@ class IssuesGrid < ApplicationGrid
     :since, :datetime,
     header: 'Updated Since',
     dummy: true,
-    input_options: {type: 'date'},
   )
 
   column_names_filter(checkboxes: true, header: 'Extra Columns')

@@ -2,7 +2,7 @@
 
 .grid-index-grid
   %div{class: 'overflow-x-auto p-4 overflow-y-hidden'}
-    = datagrid_form_for grid, url: issues_path
+    = datagrid_form_with model: grid, url: issues_path
     = datagrid_table(grid, html: {class: 'table'})
   
     %nav.join.my-3.mx-auto.w-full

@@ -2,7 +2,7 @@
 
 .grid-index-grid
   %div{class: 'overflow-x-auto max-w-full p-4'}
-    = datagrid_form_for grid, url: users_path
+    = datagrid_form_with model: grid, url: users_path
     .text-xl.m-3
       Total: #{grid.assets.total_count}
     = datagrid_table(grid)
