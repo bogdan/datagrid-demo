@@ -64,7 +64,7 @@ group :test do
 end
 
 # gem "datagrid", "~> 1.7"
-gem "datagrid", github: 'bogdan/datagrid', branch: 'version-2'
+gem "datagrid", github: 'bogdan/datagrid', branch: "main"
 # gem "datagrid", path: '../datagrid'
 
 gem "kaminari", "~> 1.2"
@@ -89,4 +89,4 @@ gem "haml-rails", "~> 2.1"
 
 gem "sassc-rails", "~> 2.1"
 
-gem "http_logger", "~> 0.7.0"
+gem "http_logger", "~> 1.0.1"
