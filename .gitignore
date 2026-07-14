@@ -39,5 +39,5 @@
 
 /node_modules
 
-# Yarn Berry local install-state cache
-.yarn/install-state.gz
+# Yarn Berry local state (using corepack's packageManager field, no vendored binary)
+.yarn/
