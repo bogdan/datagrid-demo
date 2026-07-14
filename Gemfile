@@ -80,8 +80,6 @@ gem "hirb", "~> 0.7.3"
 
 gem "pg", "~> 1.6"
 
-gem "jquery-rails", "~> 4.6"
-
 gem "tailwindcss-rails", "~> 2.7"
 
 gem "propshaft"
