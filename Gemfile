@@ -1,6 +1,12 @@
 source "https://rubygems.org"
 
-ruby "3.2.2"
+ruby "4.0.1"
+
+# Ruby 4.0 removed these from the default gems; Rails still requires them
+gem "logger"
+gem "benchmark"
+gem "ostruct"
+gem "cgi"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.2"
