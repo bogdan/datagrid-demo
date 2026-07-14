@@ -84,7 +84,7 @@ gem "jquery-rails", "~> 4.6"
 
 gem "tailwindcss-rails", "~> 2.7"
 
-gem "sprockets-rails"
+gem "propshaft"
 
 gem "haml-rails", "~> 2.1"
 
