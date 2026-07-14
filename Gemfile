@@ -73,13 +73,9 @@ gem "ffaker", "~> 2.23"
 
 gem "database_cleaner", "~> 2.0"
 
-# gem "mongoid", "~> 8.1"
-
 gem "hirb", "~> 0.7.3"
 
-gem "pg", "~> 1.5"
-
-gem "kaminari-mongoid", "~> 1.0"
+gem "pg", "~> 1.6"
 
 gem "jquery-rails", "~> 4.6"
 

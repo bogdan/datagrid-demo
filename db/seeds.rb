@@ -41,14 +41,3 @@ SQL
   end
 end
 
-
-50.times do
-  d = Document.new
-  d.title = FFaker::Lorem.sentence
-  d.author = FFaker::Internet.email
-  d.body = FFaker::Lorem.sentences(5).join(" ")
-  d.rating = (0..10).to_a.sample
-
-  d.save!
-
-end
