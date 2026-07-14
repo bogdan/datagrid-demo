@@ -84,8 +84,8 @@ gem "jquery-rails", "~> 4.6"
 
 gem "tailwindcss-rails", "~> 2.7"
 
-gem "haml-rails", "~> 2.1"
+gem "sprockets-rails"
 
-gem "sassc-rails", "~> 2.1"
+gem "haml-rails", "~> 2.1"
 
 gem "http_logger", "~> 1.0.1"

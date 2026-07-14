@@ -119,7 +119,6 @@ GEM
     erb (6.0.4)
     erubi (1.13.1)
     ffaker (2.23.0)
-    ffi (1.16.3)
     globalid (1.4.0)
       activesupport (>= 6.1)
     haml (6.3.0)
@@ -265,25 +264,18 @@ GEM
       io-console (~> 0.5)
     rexml (3.2.6)
     rubyzip (2.3.2)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
     securerandom (0.4.1)
     selenium-webdriver (4.15.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sprockets (4.2.1)
+    sprockets (4.2.2)
       concurrent-ruby (~> 1.0)
+      logger
       rack (>= 2.2.4, < 4)
-    sprockets-rails (3.4.2)
-      actionpack (>= 5.2)
-      activesupport (>= 5.2)
+    sprockets-rails (3.5.2)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
       sprockets (>= 3.0.0)
     sqlite3 (1.6.8)
       mini_portile2 (~> 2.8.0)
@@ -348,8 +340,8 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 8.1.3)
   redis (>= 4.0.1)
-  sassc-rails (~> 2.1)
   selenium-webdriver
+  sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
   tailwindcss-rails (~> 2.7)
