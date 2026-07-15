@@ -55,6 +55,8 @@ class UsersGrid < ApplicationGrid
   end
 
   column(:actions, html: true, mandatory: true) do |record|
-    link_to "Delete", "javascript:alert('Oh common! This is a demo.')", class: 'btn btn-primary'
+    content_tag(:div) do
+      link_to "Delete", "javascript:alert('Oh common! This is a demo.')", class: 'btn btn-sm btn-primary'
+    end
   end
 end
