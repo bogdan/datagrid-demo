@@ -10,41 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_11_102306) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_15_084248) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension "pg_catalog.plpgsql"
 
   create_table "accounts", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", null: false
+    t.string "name"
     t.datetime "updated_at", null: false
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string "name"
     t.integer "account_id"
     t.datetime "created_at", null: false
+    t.string "name"
     t.datetime "updated_at", null: false
   end
 
   create_table "time_entries", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "project_id"
-    t.float "hours"
     t.date "date"
+    t.float "hours"
+    t.integer "project_id"
+    t.integer "user_id"
     t.index "EXTRACT(month FROM date)", name: "date_month"
     t.index "EXTRACT(year FROM date)", name: "date_year"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.boolean "disabled", default: false, null: false
-    t.string "registration_type"
-    t.integer "logins_count", default: 0, null: false
-    t.datetime "registered_at"
     t.datetime "created_at", null: false
+    t.boolean "disabled", default: false, null: false
+    t.string "email"
+    t.integer "logins_count", default: 0, null: false
+    t.string "name"
+    t.datetime "registered_at"
+    t.string "registration_type"
     t.datetime "updated_at", null: false
   end
-
 end
