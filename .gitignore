@@ -41,3 +41,7 @@
 
 # Yarn Berry local state (using corepack's packageManager field, no vendored binary)
 .yarn/
+
+# Ignore key files for decrypting credentials and more.
+/config/*.key
+
