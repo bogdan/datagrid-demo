@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/bogdan/datagrid.git
-  revision: 3475be598ed13b32d16b026d182cde75334a91f7
+  revision: a2688d9b252c434c598b12ac2794217432e0617e
   branch: main
   specs:
-    datagrid (2.0.5)
+    datagrid (2.0.9)
       railties (>= 7.0)
 
 GEM
